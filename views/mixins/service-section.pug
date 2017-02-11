@@ -1,0 +1,29 @@
+mixin ratingBar(label, rating)
+  .rating
+    label= label
+    .progress
+      .progress-bar(style='width:' + rating * 20 + '%')= rating
+
+
+mixin serviceSection(data)
+  .row.service-wrapper
+    .col-lg-4
+      h3(id=data.slug)= data.name
+      p
+        a(href=data.url)= data.prettyUrl
+    .col-lg-4.price
+      p.price-tag= data.price.amount
+      p.price-unit= data.price.unit
+        sup *
+
+    .col-lg-4
+      .rating-box
+        +ratingBar('Difficulty:', data.rating.difficulty)
+        +ratingBar('Uniqueness:', data.rating.uniqueness)
+        +ratingBar('Menu Flexibility:', data.rating.flexibility)
+
+    .col-lg-8.description
+      p= data.description
+      .tag-list
+        each tag in data.tags
+          span.tag.badge.badge-default= tag

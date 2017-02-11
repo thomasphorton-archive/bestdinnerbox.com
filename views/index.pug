@@ -1,0 +1,19 @@
+include data/service-data.pug
+include mixins/service-section.pug
+doctype html
+html
+  include includes/head.pug
+  body
+    include includes/nav.pug
+    .container
+      .jumbotron
+        h1 Meal Box Review
+        p.lead Straight-forward recommendations for home chef delivery services.
+
+      each val in data
+        +serviceSection(val)     
+        
+      p
+        sup * assuming a 6 meal plan (3 meals with 2 servings each).
+
+      include includes/footer.pug
