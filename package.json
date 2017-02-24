@@ -13,5 +13,8 @@
     "gulp-pug2": "0.0.2",
     "gulp-sass": "^3.1.0",
     "pug": "^2.0.0-beta11"
+  },
+  "dependencies": {
+    "gulp-s3-upload": "^1.6.4"
   }
 }

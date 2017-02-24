@@ -1,0 +1,22 @@
+include /data/_supplies-data.pug
+include /mixins/_head.pug
+include /mixins/_supplies-section.pug
+doctype html
+html
+  +head('Top Kitchen Supplies That Every Home Chef Should Have', 'Best kitchen supplies and reviews for home cooks. Cheap and durable pots & pans, knives, and kitchen tools.')
+  body
+    include /includes/_nav.pug
+    .container
+      .row
+        .col-12
+          h1 Kitchen Supplies
+          p Whether you're a seasoned veteran or new to cooking, chances are you could use some new equipment in the kitchen. We've listed some of our must-haves as well as a few goodies to level up your kitchen.
+      .row
+        .col-12
+          h2 Kitchen Essentials
+          p The chef boxes will deliver the ingredients, but you'll need to supply the tools. Below we've listed some of the essentials to get started on your journey to become a home chef.
+      .row
+        each val in data
+          +suppliesSection(val)
+
+      include /includes/_footer.pug

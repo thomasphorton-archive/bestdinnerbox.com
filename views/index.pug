@@ -1,14 +1,19 @@
-include data/service-data.pug
-include mixins/service-section.pug
+include /data/_service-data.pug
+include /mixins/_head.pug
+include /mixins/_service-section.pug
 doctype html
 html
-  include includes/head.pug
+  +head('Best Dinner Box Services, Rated and Ranked. Meal Delivery Services to Try', 'Best meal subscription boxes. Plated. Freshly. Green Chef. Hello Fresh. Blue Apron. Peach Dish. Purple Carrot.')
   body
-    include includes/nav.pug
+    include /includes/_nav.pug
     .container
       .jumbotron
         h1 Best Dinner Boxes
         p.lead Straight-forward recommendations for home chef delivery services.
+
+      .row
+        .col
+          p We've spent hours combing through all of the different meal box services that have sprung up over the last few years, so trust us when we say we've tried them all.
 
       each val in data
         +serviceSection(val)     
@@ -16,4 +21,4 @@ html
       p
         sup * assuming a 6 meal plan (3 meals with 2 servings each).
 
-      include includes/footer.pug
+      include /includes/_footer.pug

@@ -1,0 +1,7 @@
+mixin suppliesSection(data)
+  .col-lg-4.supplies-section
+    h2
+      a(href= data.url)= data.name
+    a.image-anchor(href= data.url)
+      img(src= data.imageUrl)
+    p= data.description

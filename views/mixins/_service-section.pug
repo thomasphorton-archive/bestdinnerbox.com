@@ -22,8 +22,11 @@ mixin serviceSection(data)
         +ratingBar('Uniqueness:', data.rating.uniqueness)
         +ratingBar('Menu Flexibility:', data.rating.flexibility)
 
-    .col-lg-8.description
+    .col-lg-12.description
       p= data.description
+      if data.hasFullReview == true
+        a(href='/services/' + data.slug + '.html') Read Full Review >>
+
       .tag-list
         each tag in data.tags
           span.tag.badge.badge-default= tag
